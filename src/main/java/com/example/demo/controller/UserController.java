@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import com.example.demo.request.UserReq;
 import com.example.demo.response.Result;
 import com.example.demo.service.UserService;
+import com.example.demo.utils.JwtUtils;
+import com.example.demo.utils.TokenRedisManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

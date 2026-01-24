@@ -16,4 +16,9 @@
     select id, username, password
     from user
   </select>
+  <select id="selectByUsername" resultMap="BaseResultMap" parameterType="string">
+    select id, username, password
+    from user
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
 </mapper>

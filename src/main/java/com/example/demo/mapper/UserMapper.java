@@ -10,4 +10,6 @@ public interface UserMapper {
     int insert(User record);
 
     List<User> selectAll();
+
+    User selectByUsername(String username);
 }

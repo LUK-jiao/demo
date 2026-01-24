@@ -1,9 +1,8 @@
 package com.example.demo.controller;
 
-import com.example.demo.request.RegisterReq;
+import com.example.demo.request.UserReq;
 import com.example.demo.response.Result;
 import com.example.demo.service.UserService;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,12 +17,19 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/register")
-    public Result register(@RequestBody RegisterReq registerReq){
-        if(registerReq.getUsername() == null || registerReq.getPassword() == null){
+    public Result register(@RequestBody UserReq userReq){
+        if(userReq.getUsername() == null || userReq.getPassword() == null){
             return Result.failure("Username, password must not be null");
         }
-        userService.register(registerReq.getUsername(), registerReq.getPassword());
-        return Result.success();
+        return userService.register(userReq.getUsername(), userReq.getPassword());
+    }
+
+    @PostMapping("/login")
+    public Result login(@RequestBody UserReq userReq){
+        if(userReq.getUsername() == null || userReq.getPassword() == null){
+            return Result.failure("Username, password must not be null");
+        }
+        return userService.login(userReq.getUsername(), userReq.getPassword());
     }
 }
 

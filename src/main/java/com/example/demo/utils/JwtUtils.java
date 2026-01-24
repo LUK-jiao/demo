@@ -11,7 +11,7 @@ import java.util.Date;
 @Component
 public class JwtUtils {
 
-    private static final String SECRET_KEY = "mercedes-benz";
+    private static final String SECRET_KEY = "mercedesbenzisthebestcarande300LisawesomeandonedayIwillbuyitin2years";
     private static final Long EXPIRATION_TIME = 30*60*1000L;
 
     public String generateToken(Long userId){
@@ -21,7 +21,7 @@ public class JwtUtils {
                 .setSubject(Long.toString(userId))
                 .setIssuedAt(now)
                 .setExpiration(expiryDate)
-                .signWith(SignatureAlgorithm.HS512, SECRET_KEY)
+                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .compact();
     }
 

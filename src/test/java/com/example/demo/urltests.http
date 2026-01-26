@@ -9,7 +9,7 @@ Content-Type: application/json
   "username": "testuser",
   "password": "123456"
 }
-###
+### 订单表，主键id（递增主键），用户id（外键），商品id，数量，价格，订单状态，创建时间，更新时间
 
 POST http://localhost:8080/user/login
 Content-Type: application/json

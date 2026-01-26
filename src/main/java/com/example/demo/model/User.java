@@ -1,5 +1,8 @@
 package com.example.demo.model;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+
+@TableName("user")
 public class User {
     private Long id;
 

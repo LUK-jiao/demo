@@ -17,6 +17,13 @@ public class Result {
         return result;
     }
 
+    public static Result successWithMsg(String message) {
+        Result result = new Result();
+        result.setSuccess(true);
+        result.setMessage(message);
+        return result;
+    }
+
     public static Result success(Object data) {
         Result result = new Result();
         result.setSuccess(true);

@@ -17,6 +17,7 @@
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.demo.mapper" targetProject="src/main/java"/>
 
-        <table tableName="user" domainObjectName="User" schema="demo"/>
+<!--        <table tableName="user" domainObjectName="User" schema="demo"/>-->
+        <table tableName="orders" domainObjectName="Order" schema="demo"/>
     </context>
 </generatorConfiguration>

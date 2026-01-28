@@ -1,19 +1,11 @@
 package com.example.demo.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.demo.model.Order;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 @Mapper
-public interface OrderMapper {
-    int deleteByPrimaryKey(Long id);
-
-    int insert(Order record);
-
-    Order selectByPrimaryKey(Long id);
-
-    List<Order> selectAll();
-
-    int updateByPrimaryKey(Order record);
+public interface OrderMapper extends BaseMapper<Order> {
 }

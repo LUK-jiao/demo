@@ -1,0 +1,56 @@
+2026-01-28 17:29:22.668 ERROR [http-nio-8080-exec-3] [b535a235-659f-45cd-96cf-427814443431] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:38:46.947 ERROR [http-nio-8080-exec-1] [a65dc65b-ca2b-44d5-8cb1-764cdb5497d0] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:41:55.321 ERROR [http-nio-8080-exec-1] [39119742-c8f5-48e6-817a-09a0ec6ab4d4] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:45:25.297 ERROR [http-nio-8080-exec-1] [3ce196f8-4c39-41bb-8dc9-33b8999f7b53] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:47:55.250 ERROR [http-nio-8080-exec-1] [602efc78-8a3c-4d8f-91e0-50e374354ad8] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:48:32.565 ERROR [http-nio-8080-exec-1] [98c553d3-3ed1-47a3-97bf-f81c99a7e6ab] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:49:28.286 ERROR [http-nio-8080-exec-1] [e671e733-207f-4044-b340-94015592939b] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in com/example/demo/mapper/OrderMapper.java (best guess)
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO orders  ( id, order_no, user_id, product_id, quantity, total_amount, status, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null

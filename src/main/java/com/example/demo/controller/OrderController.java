@@ -7,6 +7,7 @@ import com.example.demo.request.OrderReq;
 import com.example.demo.response.Result;
 import com.example.demo.service.OrderService;
 import com.example.demo.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 @RequestMapping ("/order")
+@Slf4j
 public class OrderController {
 
     @Autowired
@@ -25,14 +27,12 @@ public class OrderController {
     UserService userService;
 
     @PostMapping("/create")
-    public Result createOrder(@RequestBody OrderReq orderReq) {
-        if(orderReq.getUserName() == null){
-            return Result.failure("UserName must not be null");
+    public Result createOrder(@RequestBody OrderReq orderReq,@RequestAttribute("userId") Long userId) {
+        log.info("Creating order for user: {}", orderReq);
+        if(userId == null){
+            return Result.failure("UserId must not be null");
         }
-        User user = userService.getUserByUsername(orderReq.getUserName());
-        if(user == null){
-            return Result.failure("User does not exist");
-        }
+        orderReq.setUserId(userId);
         if(orderReq.getProductId() == null){
             return Result.failure("ProductId must not be null");
         }
@@ -44,7 +44,7 @@ public class OrderController {
         }
         Order order = new Order();
         String orderNo = generateOrderNo();
-        setOrder(orderReq, order, orderNo, user);
+        setOrder(orderReq, order, orderNo);
         try{
             orderService.createOrder(order);
         }
@@ -59,13 +59,13 @@ public class OrderController {
         return Result.success(orderService.queryOrders());
     }
 
-    private static void setOrder(OrderReq orderReq, Order order, String orderNo, User user) {
+    private static void setOrder(OrderReq orderReq, Order order, String orderNo) {
         order.setOrderNo(orderNo);
-        order.setUserId(user.getId());
+        order.setUserId(orderReq.getUserId());
         order.setProductId(orderReq.getProductId());
         order.setQuantity(orderReq.getQuantity());
         order.setTotalAmount(orderReq.getTotalAmount());
-        order.setStatus(OrderStatus.CREATED);
+        order.setStatus(OrderStatus.PAID);
     }
 
     private String generateOrderNo() {

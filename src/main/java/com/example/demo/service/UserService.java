@@ -51,7 +51,7 @@ public class UserService {
         return Result.success(token);
     }
 
-    public User getUserByUsername(Long userName){
+    public User getUserByUsername(String userName){
         User user = userMapper.selectByUsername(String.valueOf(userName));
         if(user == null){
             return null;

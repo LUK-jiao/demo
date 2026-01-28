@@ -11,3 +11,246 @@
 2026-01-28 16:41:43.993 INFO  [http-nio-8080-exec-2] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
 2026-01-28 16:41:44.114 INFO  [http-nio-8080-exec-2] [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5721b12b
 2026-01-28 16:41:44.115 INFO  [http-nio-8080-exec-2] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 16:53:36.737 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-28 16:53:36.744 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-28 16:53:48.858 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 37533 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 16:53:48.859 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 16:53:49.357 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 16:53:49.358 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 16:53:49.358 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 16:53:49.378 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 16:53:49.790 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 16:53:49.807 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.151 seconds (process running for 1.36)
+2026-01-28 16:53:52.570 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 16:53:52.578 INFO  [http-nio-8080-exec-1] [] [] com.example.demo.handler.AuthInterceptor - Missing or invalid Authorization header
+2026-01-28 16:54:34.442 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 37565 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 16:54:34.443 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 16:54:34.937 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 16:54:34.939 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 16:54:34.939 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 16:54:34.960 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 16:54:35.353 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 16:54:35.369 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.129 seconds (process running for 1.341)
+2026-01-28 16:54:39.375 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 16:54:39.415 INFO  [http-nio-8080-exec-1] [] [] com.example.demo.controller.UserController - Registered user: testCreateOrder
+2026-01-28 16:54:39.422 INFO  [http-nio-8080-exec-1] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 16:54:39.557 INFO  [http-nio-8080-exec-1] [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52dcb23b
+2026-01-28 16:54:39.557 INFO  [http-nio-8080-exec-1] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 16:55:46.843 INFO  [http-nio-8080-exec-3] [] [] com.example.demo.controller.UserController - Logined user: testCreateOrder
+2026-01-28 16:56:26.238 INFO  [http-nio-8080-exec-4] [936e5113-2d2b-46f7-aae4-865b8fbd4fd4] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:10:36.932 INFO  [http-nio-8080-exec-7] [e47bb66e-5086-4edb-87fa-0d3fafe17d7f] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:15:49.720 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-28 17:15:49.729 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-28 17:15:53.054 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 37812 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 17:15:53.055 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 17:15:53.654 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:15:53.656 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 17:15:53.656 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 17:15:53.682 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 17:15:54.144 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:15:54.158 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.335 seconds (process running for 1.548)
+2026-01-28 17:16:05.804 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 17:16:05.994 INFO  [http-nio-8080-exec-1] [8012d2cd-c20a-47a8-8bf2-553f194131e0] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:16:06.019 INFO  [http-nio-8080-exec-1] [8012d2cd-c20a-47a8-8bf2-553f194131e0] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)
+2026-01-28 17:24:25.461 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 37904 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 17:24:25.463 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 17:24:25.961 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:24:25.963 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 17:24:25.963 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 17:24:25.982 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 17:24:26.377 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:24:26.389 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.132 seconds (process running for 1.337)
+2026-01-28 17:24:29.572 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 17:24:29.753 INFO  [http-nio-8080-exec-1] [23b9ef46-428c-4a9a-bcff-846392a5d1b5] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:24:29.778 INFO  [http-nio-8080-exec-1] [23b9ef46-428c-4a9a-bcff-846392a5d1b5] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)
+2026-01-28 17:24:29.787 INFO  [http-nio-8080-exec-1] [23b9ef46-428c-4a9a-bcff-846392a5d1b5] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 17:24:29.914 INFO  [http-nio-8080-exec-1] [23b9ef46-428c-4a9a-bcff-846392a5d1b5] [14] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e721094
+2026-01-28 17:24:29.915 INFO  [http-nio-8080-exec-1] [23b9ef46-428c-4a9a-bcff-846392a5d1b5] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 17:28:26.825 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-28 17:28:26.834 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-28 17:28:28.634 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 37953 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 17:28:28.635 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 17:28:29.132 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:28:29.134 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 17:28:29.134 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 17:28:29.154 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 17:28:29.557 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:28:29.569 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.143 seconds (process running for 1.348)
+2026-01-28 17:28:35.154 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 17:28:35.190 INFO  [http-nio-8080-exec-1] [] [] com.example.demo.handler.AuthInterceptor - invalid token:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNCIsImlhdCI6MTc2OTU5MDU0NiwiZXhwIjoxNzY5NTkyMzQ2fQ.VnaRra6gqDvJlEh9wX6OOl20UnLrSnaiH9j49FhVXgM
+2026-01-28 17:28:56.769 INFO  [http-nio-8080-exec-2] [] [] com.example.demo.controller.UserController - Logined user: testCreateOrder
+2026-01-28 17:28:56.778 INFO  [http-nio-8080-exec-2] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 17:28:56.908 INFO  [http-nio-8080-exec-2] [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5af104c5
+2026-01-28 17:28:56.909 INFO  [http-nio-8080-exec-2] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 17:29:22.607 INFO  [http-nio-8080-exec-3] [b535a235-659f-45cd-96cf-427814443431] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:29:22.610 INFO  [http-nio-8080-exec-3] [b535a235-659f-45cd-96cf-427814443431] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)
+2026-01-28 17:29:22.668 ERROR [http-nio-8080-exec-3] [b535a235-659f-45cd-96cf-427814443431] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:38:40.360 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-28 17:38:40.368 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-28 17:38:42.117 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 38085 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 17:38:42.118 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 17:38:42.604 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:38:42.606 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 17:38:42.606 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 17:38:42.626 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 17:38:43.037 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:38:43.054 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.138 seconds (process running for 1.347)
+2026-01-28 17:38:46.523 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 17:38:46.719 INFO  [http-nio-8080-exec-1] [a65dc65b-ca2b-44d5-8cb1-764cdb5497d0] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:38:46.743 INFO  [http-nio-8080-exec-1] [a65dc65b-ca2b-44d5-8cb1-764cdb5497d0] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)
+2026-01-28 17:38:46.751 INFO  [http-nio-8080-exec-1] [a65dc65b-ca2b-44d5-8cb1-764cdb5497d0] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 17:38:46.876 INFO  [http-nio-8080-exec-1] [a65dc65b-ca2b-44d5-8cb1-764cdb5497d0] [14] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2255fe6b
+2026-01-28 17:38:46.881 INFO  [http-nio-8080-exec-1] [a65dc65b-ca2b-44d5-8cb1-764cdb5497d0] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 17:38:46.947 ERROR [http-nio-8080-exec-1] [a65dc65b-ca2b-44d5-8cb1-764cdb5497d0] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:41:45.224 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-28 17:41:45.232 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-28 17:41:46.987 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 38133 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 17:41:46.988 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 17:41:47.476 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:41:47.477 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 17:41:47.477 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 17:41:47.496 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 17:41:47.896 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:41:47.915 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.131 seconds (process running for 1.34)
+2026-01-28 17:41:54.912 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 17:41:55.099 INFO  [http-nio-8080-exec-1] [39119742-c8f5-48e6-817a-09a0ec6ab4d4] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:41:55.124 INFO  [http-nio-8080-exec-1] [39119742-c8f5-48e6-817a-09a0ec6ab4d4] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)
+2026-01-28 17:41:55.132 INFO  [http-nio-8080-exec-1] [39119742-c8f5-48e6-817a-09a0ec6ab4d4] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 17:41:55.256 INFO  [http-nio-8080-exec-1] [39119742-c8f5-48e6-817a-09a0ec6ab4d4] [14] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@60346fc3
+2026-01-28 17:41:55.257 INFO  [http-nio-8080-exec-1] [39119742-c8f5-48e6-817a-09a0ec6ab4d4] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 17:41:55.321 ERROR [http-nio-8080-exec-1] [39119742-c8f5-48e6-817a-09a0ec6ab4d4] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:45:19.563 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-28 17:45:19.570 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-28 17:45:21.236 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 38180 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 17:45:21.237 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 17:45:21.721 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:45:21.723 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 17:45:21.723 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 17:45:21.742 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 17:45:22.176 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:45:22.190 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.154 seconds (process running for 1.36)
+2026-01-28 17:45:24.892 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 17:45:25.072 INFO  [http-nio-8080-exec-1] [3ce196f8-4c39-41bb-8dc9-33b8999f7b53] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:45:25.096 INFO  [http-nio-8080-exec-1] [3ce196f8-4c39-41bb-8dc9-33b8999f7b53] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)
+2026-01-28 17:45:25.099 INFO  [http-nio-8080-exec-1] [3ce196f8-4c39-41bb-8dc9-33b8999f7b53] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 17:45:25.223 INFO  [http-nio-8080-exec-1] [3ce196f8-4c39-41bb-8dc9-33b8999f7b53] [14] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7455e18c
+2026-01-28 17:45:25.223 INFO  [http-nio-8080-exec-1] [3ce196f8-4c39-41bb-8dc9-33b8999f7b53] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 17:45:25.297 ERROR [http-nio-8080-exec-1] [3ce196f8-4c39-41bb-8dc9-33b8999f7b53] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:47:47.210 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-28 17:47:47.218 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-28 17:47:48.418 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 38208 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 17:47:48.419 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 17:47:48.915 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:47:48.916 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 17:47:48.916 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 17:47:48.935 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 17:47:49.354 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:47:49.367 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.159 seconds (process running for 1.367)
+2026-01-28 17:47:54.837 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 17:47:55.022 INFO  [http-nio-8080-exec-1] [602efc78-8a3c-4d8f-91e0-50e374354ad8] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:47:55.047 INFO  [http-nio-8080-exec-1] [602efc78-8a3c-4d8f-91e0-50e374354ad8] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)
+2026-01-28 17:47:55.049 INFO  [http-nio-8080-exec-1] [602efc78-8a3c-4d8f-91e0-50e374354ad8] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 17:47:55.172 INFO  [http-nio-8080-exec-1] [602efc78-8a3c-4d8f-91e0-50e374354ad8] [14] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f908fca
+2026-01-28 17:47:55.173 INFO  [http-nio-8080-exec-1] [602efc78-8a3c-4d8f-91e0-50e374354ad8] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 17:47:55.250 ERROR [http-nio-8080-exec-1] [602efc78-8a3c-4d8f-91e0-50e374354ad8] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:48:24.327 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-28 17:48:24.334 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-28 17:48:26.829 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 38371 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 17:48:26.831 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 17:48:27.330 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:48:27.331 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 17:48:27.332 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 17:48:27.354 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 17:48:27.779 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:48:27.791 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.229 seconds (process running for 1.45)
+2026-01-28 17:48:32.156 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 17:48:32.339 INFO  [http-nio-8080-exec-1] [98c553d3-3ed1-47a3-97bf-f81c99a7e6ab] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:48:32.364 INFO  [http-nio-8080-exec-1] [98c553d3-3ed1-47a3-97bf-f81c99a7e6ab] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)
+2026-01-28 17:48:32.366 INFO  [http-nio-8080-exec-1] [98c553d3-3ed1-47a3-97bf-f81c99a7e6ab] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 17:48:32.485 INFO  [http-nio-8080-exec-1] [98c553d3-3ed1-47a3-97bf-f81c99a7e6ab] [14] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@250bab1d
+2026-01-28 17:48:32.486 INFO  [http-nio-8080-exec-1] [98c553d3-3ed1-47a3-97bf-f81c99a7e6ab] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 17:48:32.565 ERROR [http-nio-8080-exec-1] [98c553d3-3ed1-47a3-97bf-f81c99a7e6ab] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in file [/Users/shawluke/IdeaProjects/demo/target/classes/mapper/OrderMapper.xml]
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into orders (id, order_no, user_id,        product_id, quantity, total_amount,        status, created_at, updated_at       )     values (?, ?, ?,        ?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:49:17.208 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-28 17:49:17.215 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-28 17:49:18.825 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 38401 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 17:49:18.826 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 17:49:19.342 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:49:19.343 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 17:49:19.343 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 17:49:19.364 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 17:49:19.775 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:49:19.788 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.165 seconds (process running for 1.37)
+2026-01-28 17:49:27.857 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 17:49:28.041 INFO  [http-nio-8080-exec-1] [e671e733-207f-4044-b340-94015592939b] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:49:28.066 INFO  [http-nio-8080-exec-1] [e671e733-207f-4044-b340-94015592939b] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)
+2026-01-28 17:49:28.069 INFO  [http-nio-8080-exec-1] [e671e733-207f-4044-b340-94015592939b] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 17:49:28.192 INFO  [http-nio-8080-exec-1] [e671e733-207f-4044-b340-94015592939b] [14] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@541dab58
+2026-01-28 17:49:28.193 INFO  [http-nio-8080-exec-1] [e671e733-207f-4044-b340-94015592939b] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 17:49:28.286 ERROR [http-nio-8080-exec-1] [e671e733-207f-4044-b340-94015592939b] [14] com.example.demo.service.OrderService - Failed to create order: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+### The error may exist in com/example/demo/mapper/OrderMapper.java (best guess)
+### The error may involve com.example.demo.mapper.OrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO orders  ( id, order_no, user_id, product_id, quantity, total_amount, status, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'created_at' cannot be null
+; Column 'created_at' cannot be null
+2026-01-28 17:57:52.273 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-28 17:57:52.284 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-28 17:57:54.114 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 38489 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 17:57:54.115 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 17:57:54.614 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:57:54.615 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 17:57:54.616 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 17:57:54.635 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 17:57:55.039 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 17:57:55.051 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.136 seconds (process running for 1.35)
+2026-01-28 17:57:57.893 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 17:57:58.080 INFO  [http-nio-8080-exec-1] [33ef8e7a-4835-4f0a-9e88-d85aa0c98ef1] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:57:58.106 INFO  [http-nio-8080-exec-1] [33ef8e7a-4835-4f0a-9e88-d85aa0c98ef1] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)
+2026-01-28 17:57:58.108 INFO  [http-nio-8080-exec-1] [33ef8e7a-4835-4f0a-9e88-d85aa0c98ef1] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 17:57:58.232 INFO  [http-nio-8080-exec-1] [33ef8e7a-4835-4f0a-9e88-d85aa0c98ef1] [14] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b946a64
+2026-01-28 17:57:58.232 INFO  [http-nio-8080-exec-1] [33ef8e7a-4835-4f0a-9e88-d85aa0c98ef1] [14] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-28 17:58:16.787 INFO  [http-nio-8080-exec-2] [75afeb34-4501-4600-893d-d50ac3b0e62f] [14] com.example.demo.handler.AuthInterceptor - Already online user:14
+2026-01-28 17:58:16.788 INFO  [http-nio-8080-exec-2] [75afeb34-4501-4600-893d-d50ac3b0e62f] [14] com.example.demo.controller.OrderController - Creating order for user: OrderReq(userId=null, userName=testCreateOrder, productId=1, quantity=1, totalAmount=1, statusDesc=null)

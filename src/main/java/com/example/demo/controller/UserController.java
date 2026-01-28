@@ -5,6 +5,7 @@ import com.example.demo.response.Result;
 import com.example.demo.service.UserService;
 import com.example.demo.utils.JwtUtils;
 import com.example.demo.utils.TokenRedisManager;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Autowired
@@ -23,6 +25,7 @@ public class UserController {
         if(userReq.getUsername() == null || userReq.getPassword() == null){
             return Result.failure("Username, password must not be null");
         }
+        log.info("Registered user: {}", userReq.getUsername());
         return userService.register(userReq.getUsername(), userReq.getPassword());
     }
 
@@ -31,6 +34,7 @@ public class UserController {
         if(userReq.getUsername() == null || userReq.getPassword() == null){
             return Result.failure("Username, password must not be null");
         }
+        log.info("Logined user: {}", userReq.getUsername());
         return userService.login(userReq.getUsername(), userReq.getPassword());
     }
 }

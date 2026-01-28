@@ -1,0 +1,13 @@
+2026-01-28 16:40:42.364 INFO  [main] [] [] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.18 with PID 37283 (/Users/shawluke/IdeaProjects/demo/target/classes started by shawluke in /Users/shawluke/IdeaProjects/demo)
+2026-01-28 16:40:42.365 INFO  [main] [] [] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 16:40:42.869 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 16:40:42.871 INFO  [main] [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-28 16:40:42.871 INFO  [main] [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+2026-01-28 16:40:42.892 INFO  [main] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-28 16:40:43.312 INFO  [main] [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-28 16:40:43.329 INFO  [main] [] [] com.example.demo.DemoApplication - Started DemoApplication in 1.169 seconds (process running for 1.381)
+2026-01-28 16:40:52.460 INFO  [http-nio-8080-exec-1] [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-28 16:40:52.495 INFO  [http-nio-8080-exec-1] [] [] com.example.demo.handler.AuthInterceptor - invalid token:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImV4cCI6MTczNzYwMDAwMH0.xxx
+2026-01-28 16:41:43.993 INFO  [http-nio-8080-exec-2] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-28 16:41:44.114 INFO  [http-nio-8080-exec-2] [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5721b12b
+2026-01-28 16:41:44.115 INFO  [http-nio-8080-exec-2] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

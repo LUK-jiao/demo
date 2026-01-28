@@ -1,5 +1,8 @@
 package com.example.demo.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo.mapper.OrderMapper;
 import com.example.demo.model.Order;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +32,20 @@ public class OrderService {
         }
     }
 
-    public Order queryOrders(){
-        return orderMapper.selectById("1");
+    public IPage<Order> queryOrdersByUserId(Long userId,Long pageNum,Long pageSize) {
+        log.info("queryOrdersByUserId:userId=={},page=={},pageSize=={}",userId,pageNum,pageSize);
+        Page<Order> page = new Page<>(pageNum,pageSize);
+        QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_id", userId);
+        IPage<Order> res;
+        try{
+            res = orderMapper.selectPage(page, queryWrapper);
+
+        } catch (Exception e) {
+            log.error("Failed to query orders by userId: {}", e.getMessage());
+            throw new RuntimeException(e);
+        }
+        log.info("Queried {} orders for userId {}", res.getTotal(),userId);
+        return res;
     }
 }

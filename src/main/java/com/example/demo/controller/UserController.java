@@ -25,8 +25,9 @@ public class UserController {
         if(userReq.getUsername() == null || userReq.getPassword() == null){
             return Result.failure("Username, password must not be null");
         }
-        log.info("Registered user: {}", userReq.getUsername());
-        return userService.register(userReq.getUsername(), userReq.getPassword());
+        Result result = userService.register(userReq.getUsername(), userReq.getPassword());
+        log.info("Registered user: {}", userReq );
+        return result;
     }
 
     @PostMapping("/login")
@@ -34,7 +35,7 @@ public class UserController {
         if(userReq.getUsername() == null || userReq.getPassword() == null){
             return Result.failure("Username, password must not be null");
         }
-        log.info("Logined user: {}", userReq.getUsername());
+        log.info("Logining user: {}", userReq.getUsername());
         return userService.login(userReq.getUsername(), userReq.getPassword());
     }
 }

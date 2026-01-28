@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.demo.model.Order;
 import com.example.demo.model.OrderStatus;
 import com.example.demo.model.User;
@@ -7,6 +8,7 @@ import com.example.demo.request.OrderReq;
 import com.example.demo.response.Result;
 import com.example.demo.service.OrderService;
 import com.example.demo.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -54,9 +56,29 @@ public class OrderController {
         return Result.success(orderNo);
     }
 
+//    @GetMapping("/list")
+//    public Result listOrder(@RequestParam("userId") Long userId,@RequestParam("page") Long page,@RequestParam("pageSize") Long pageSize) {
+//        log.info("Listing orders for userId: {}", userId);
+//        if(userId == null){
+//            log.error("UserId must not be null");
+//            return Result.failure("UserId must not be null");
+//        }
+//        IPage<Order> res = orderService.queryOrdersByUserId(userId,page,pageSize);
+//        return Result.success(res);
+//    }
+
     @GetMapping("/list")
-    public Result listOrder() {
-        return Result.success(orderService.queryOrders());
+    public Result listOrder(HttpServletRequest request) {
+        Long userId = (Long) request.getAttribute("userId");
+        log.info("Listing orders for userId: {}", userId);
+        if(userId == null){
+            log.error("UserId must not be null");
+            return Result.failure("UserId must not be null");
+        }
+        Long page = request.getParameter("page") != null ? Long.parseLong(request.getParameter("page")) : 1L;
+        Long pageSize = request.getParameter("pageSize") != null ? Long.parseLong(request.getParameter("pageSize")) : 10L;
+        IPage<Order> res = orderService.queryOrdersByUserId(userId,page,pageSize);
+        return Result.success(res);
     }
 
     private static void setOrder(OrderReq orderReq, Order order, String orderNo) {

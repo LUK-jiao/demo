@@ -3,12 +3,11 @@ package com.example.demo.model;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.example.demo.enums.OrderStatus;
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Date;
 
 @Data
 @TableName("orders")

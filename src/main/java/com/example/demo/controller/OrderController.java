@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.demo.model.Order;
-import com.example.demo.model.OrderStatus;
-import com.example.demo.model.User;
+import com.example.demo.enums.OrderStatus;
 import com.example.demo.request.OrderReq;
 import com.example.demo.response.Result;
 import com.example.demo.service.OrderService;
@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
@@ -56,17 +55,6 @@ public class OrderController {
         return Result.success(orderNo);
     }
 
-//    @GetMapping("/list")
-//    public Result listOrder(@RequestParam("userId") Long userId,@RequestParam("page") Long page,@RequestParam("pageSize") Long pageSize) {
-//        log.info("Listing orders for userId: {}", userId);
-//        if(userId == null){
-//            log.error("UserId must not be null");
-//            return Result.failure("UserId must not be null");
-//        }
-//        IPage<Order> res = orderService.queryOrdersByUserId(userId,page,pageSize);
-//        return Result.success(res);
-//    }
-
     @GetMapping("/list")
     public Result listOrder(HttpServletRequest request) {
         Long userId = (Long) request.getAttribute("userId");
@@ -79,6 +67,27 @@ public class OrderController {
         Long pageSize = request.getParameter("pageSize") != null ? Long.parseLong(request.getParameter("pageSize")) : 10L;
         IPage<Order> res = orderService.queryOrdersByUserId(userId,page,pageSize);
         return Result.success(res);
+    }
+
+    @PostMapping("update")
+    public Result updateOrder(OrderReq orderReq,@RequestAttribute("userId") Long userId) {
+        //更新订单信息接口，可以修改订单。首先校验订单号是否属于对应的userId，然后修改订单。这些逻辑都在serviece
+        log.info("updating Order req:{},userId:{}", JSON.toJSONString(orderReq),userId);
+        if(userId == null){
+            log.error("UserId must not be null");
+            return Result.failure("UserId must not be null");
+        }
+        if (orderReq == null) {
+            log.warn("Update order request is empty");
+            return Result.failure("orderReq must not be null");
+        }
+        try{
+            orderService.updateOrder(orderReq,userId);
+            return Result.successWithMsg(String.format("Order updated successfully %s", orderReq.getOrderNo()));
+        }catch(Exception e){
+            log.error("Failed to update order: {}", e.getMessage());
+            return Result.failure("Failed to update order");
+        }
     }
 
     private static void setOrder(OrderReq orderReq, Order order, String orderNo) {

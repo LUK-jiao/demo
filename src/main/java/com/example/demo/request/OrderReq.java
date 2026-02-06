@@ -1,12 +1,12 @@
 package com.example.demo.request;
 
-import com.example.demo.model.OrderStatus;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Data
 public class OrderReq {
+    private String orderNo;
     private Long userId;
     private String userName;
     private Long productId;

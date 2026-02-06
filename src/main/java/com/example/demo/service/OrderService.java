@@ -3,15 +3,17 @@ package com.example.demo.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.demo.enums.ErrorCode;
+import com.example.demo.exceptions.BusinessException;
 import com.example.demo.mapper.OrderMapper;
 import com.example.demo.model.Order;
+import com.example.demo.enums.OrderStatus;
+import com.example.demo.request.OrderReq;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @Slf4j
@@ -47,5 +49,32 @@ public class OrderService {
         }
         log.info("Queried {} orders for userId {}", res.getTotal(),userId);
         return res;
+    }
+
+    @Transactional
+    public void updateOrder(OrderReq orderReq, Long userId) {
+
+        Order order = orderMapper.selectByUserIdAndOrderNo(
+                userId, orderReq.getOrderNo());
+        if(order == null){
+            log.info("Failed to query order by orderNo: {} ,userId:{}", orderReq.getOrderNo(),userId);
+            throw new BusinessException(ErrorCode.ORDER_NOT_FOUND);
+        }
+        Order updateOrder = new Order();
+        buildUpdateOrder(orderReq, updateOrder, order);
+        try{
+            orderMapper.updateById(updateOrder);
+        }catch (Exception e){
+            log.error("Failed to update order: {}", e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    private static void buildUpdateOrder(OrderReq orderReq, Order updateOrder, Order order) {
+        updateOrder.setId(order.getId());
+        updateOrder.setOrderNo(orderReq.getOrderNo());
+        updateOrder.setQuantity(orderReq.getQuantity());
+        updateOrder.setTotalAmount(orderReq.getTotalAmount());
+        updateOrder.setStatus(OrderStatus.getByDescription(orderReq.getStatusDesc()));
     }
 }

@@ -1,17 +1,13 @@
 package com.example.demo.model;
 
-import com.baomidou.mybatisplus.annotation.*;
 import com.example.demo.enums.OrderStatus;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @Data
-@TableName("orders")
-public class Order {
+public class OrderQuery {
 
-    @TableId(type = IdType.AUTO)
     private Long id;
 
     private String orderNo;
@@ -25,10 +21,4 @@ public class Order {
     private BigDecimal totalAmount;
 
     private OrderStatus status;
-
-    @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime createdAt;
-
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime updatedAt;
 }

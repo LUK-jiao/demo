@@ -8,6 +8,7 @@ import com.example.demo.exceptions.BusinessException;
 import com.example.demo.mapper.OrderMapper;
 import com.example.demo.model.Order;
 import com.example.demo.enums.OrderStatus;
+import com.example.demo.model.OrderQuery;
 import com.example.demo.request.OrderReq;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -53,9 +54,10 @@ public class OrderService {
 
     @Transactional
     public void updateOrder(OrderReq orderReq, Long userId) {
-
-        Order order = orderMapper.selectByUserIdAndOrderNo(
-                userId, orderReq.getOrderNo());
+        OrderQuery orderQuery = new OrderQuery();
+        orderQuery.setOrderNo(orderReq.getOrderNo());
+        orderQuery.setUserId(userId);
+        Order order = orderMapper.selectByUserIdAndOrderNo(orderQuery);
         if(order == null){
             log.info("Failed to query order by orderNo: {} ,userId:{}", orderReq.getOrderNo(),userId);
             throw new BusinessException(ErrorCode.ORDER_NOT_FOUND);

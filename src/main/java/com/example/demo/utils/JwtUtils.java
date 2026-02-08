@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 @Component
-public class JwtUtils {
+public class JwtUtils { //JwtUtils的builder和parser是一对
 
     private static final String SECRET_KEY = "mercedesbenzisthebestcarande300LisawesomeandonedayIwillbuyitin2years";
     private static final Long EXPIRATION_TIME = 30*60*1000L;

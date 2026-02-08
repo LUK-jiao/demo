@@ -56,7 +56,7 @@ public class OrderController {
     }
 
     @GetMapping("/list")
-    public Result listOrder(HttpServletRequest request) {
+    public Result listOrder(HttpServletRequest request) {//和上面的createOrder接口不同，这里通过HttpServletRequest获取Attribute
         Long userId = (Long) request.getAttribute("userId");
         log.info("Listing orders for userId: {}", userId);
         if(userId == null){
@@ -70,7 +70,7 @@ public class OrderController {
     }
 
     @PostMapping("update")
-    public Result updateOrder(OrderReq orderReq,@RequestAttribute("userId") Long userId) {
+    public Result updateOrder(@RequestBody OrderReq orderReq,@RequestAttribute("userId") Long userId) {
         //更新订单信息接口，可以修改订单。首先校验订单号是否属于对应的userId，然后修改订单。这些逻辑都在serviece
         log.info("updating Order req:{},userId:{}", JSON.toJSONString(orderReq),userId);
         if(userId == null){

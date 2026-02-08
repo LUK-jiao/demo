@@ -2,9 +2,11 @@ package com.example.demo.service;
 
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.model.User;
+import com.example.demo.model.UserVo;
 import com.example.demo.response.Result;
 import com.example.demo.utils.JwtUtils;
 import com.example.demo.utils.TokenRedisManager;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
@@ -48,7 +50,10 @@ public class UserService {
         }
         String token = jwtUtils.generateToken(user.getId());
         tokenRedisManager.storeToken(token, user.getId());
-        return Result.success(token);
+        UserVo userVo = new UserVo();
+        BeanUtils.copyProperties(user, userVo);
+        userVo.setToken(token);
+        return Result.success(userVo);
     }
 
     public User getUserByUsername(String userName){

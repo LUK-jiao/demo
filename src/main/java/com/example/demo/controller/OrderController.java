@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.example.demo.enums.ErrorCode;
 import com.example.demo.model.Order;
 import com.example.demo.enums.OrderStatus;
 import com.example.demo.request.OrderReq;
@@ -77,18 +78,53 @@ public class OrderController {
             log.error("UserId must not be null");
             return Result.failure("UserId must not be null");
         }
-        if (orderReq == null) {
-            log.warn("Update order request is empty");
-            return Result.failure("orderReq must not be null");
+        if (orderReq ==  null || orderReq.getOrderNo() == null) {
+            log.warn("Update order request is empty or orderNo is null");
+            return Result.failure(ErrorCode.ORDER_NOT_FOUND.getMessage());
         }
+        Order order = orderService.isOrderValid(orderReq,userId);
+        if(order == null){
+            log.warn(String.format("OrderNo %s and userId %s is not valid", orderReq.getOrderNo(),userId));
+            return Result.failure(ErrorCode.ORDER_NOT_FOUND.getMessage());
+        }
+        orderReq.setUserId(order.getUserId());
+        orderReq.setId(order.getId());
         try{
-            orderService.updateOrder(orderReq,userId);
+            orderService.updateOrder(orderReq);
             return Result.successWithMsg(String.format("Order updated successfully %s", orderReq.getOrderNo()));
         }catch(Exception e){
             log.error("Failed to update order: {}", e.getMessage());
             return Result.failure("Failed to update order");
         }
     }
+
+    @PostMapping("/delete")
+    public Result deleteOrder(@RequestBody OrderReq orderReq,@RequestAttribute("userId")  Long userId) {
+        log.info("Deleting Order req:{}", JSON.toJSONString(orderReq));
+        if(userId == null){
+            log.info("UserId must not be null");
+            return Result.failure("UserId must not be null");
+        }
+        if (orderReq ==  null || orderReq.getOrderNo() == null) {
+            log.warn("Update order request is empty or orderNo is null");
+            return Result.failure(ErrorCode.ORDER_NOT_FOUND.getMessage());
+        }
+        Order order = orderService.isOrderValid(orderReq,userId);
+        if(order == null){
+            log.warn(String.format("OrderNo %s and userId %s is not valid", orderReq.getOrderNo(),userId));
+            return Result.failure(ErrorCode.ORDER_NOT_FOUND.getMessage());
+        }
+        orderReq.setId(order.getId());
+        try{
+            orderService.deleteOrder(orderReq);
+            return Result.success(String.format("Order deleted successfully %s", orderReq.getOrderNo()));
+        }catch(Exception e){
+            log.error("Failed to delete order: {}", e.getMessage());
+            return Result.failure("Failed to delete order");
+        }
+    }
+
+
 
     private static void setOrder(OrderReq orderReq, Order order, String orderNo) {
         order.setOrderNo(orderNo);

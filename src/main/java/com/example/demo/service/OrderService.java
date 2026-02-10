@@ -53,17 +53,9 @@ public class OrderService {
     }
 
     @Transactional
-    public void updateOrder(OrderReq orderReq, Long userId) {
-        OrderQuery orderQuery = new OrderQuery();
-        orderQuery.setOrderNo(orderReq.getOrderNo());
-        orderQuery.setUserId(userId);
-        Order order = orderMapper.selectByUserIdAndOrderNo(orderQuery);
-        if(order == null){
-            log.info("Failed to query order by orderNo: {} ,userId:{}", orderReq.getOrderNo(),userId);
-            throw new BusinessException(ErrorCode.ORDER_NOT_FOUND);
-        }
+    public void updateOrder(OrderReq orderReq) {
         Order updateOrder = new Order();
-        buildUpdateOrder(orderReq, updateOrder, order);
+        buildUpdateOrder(orderReq, updateOrder);
         try{
             orderMapper.updateById(updateOrder);
         }catch (Exception e){
@@ -72,11 +64,29 @@ public class OrderService {
         }
     }
 
-    private static void buildUpdateOrder(OrderReq orderReq, Order updateOrder, Order order) {
-        updateOrder.setId(order.getId());
+    public Order isOrderValid(OrderReq orderReq, Long userId) {
+        OrderQuery orderQuery = new OrderQuery();
+        orderQuery.setOrderNo(orderReq.getOrderNo());
+        orderQuery.setUserId(userId);
+        Order order = orderMapper.selectByUserIdAndOrderNo(orderQuery);
+        return order;
+    }
+
+    private static void buildUpdateOrder(OrderReq orderReq, Order updateOrder) {
+        updateOrder.setId(orderReq.getId());
         updateOrder.setOrderNo(orderReq.getOrderNo());
         updateOrder.setQuantity(orderReq.getQuantity());
         updateOrder.setTotalAmount(orderReq.getTotalAmount());
         updateOrder.setStatus(OrderStatus.getByDescription(orderReq.getStatusDesc()));
+    }
+
+    @Transactional
+    public void deleteOrder(OrderReq orderReq) {
+        try{
+            orderMapper.deleteById(orderReq.getId());
+        }catch (Exception e){
+            log.error("Failed to delete order: {}", e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
     }
 }

@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 
 @Data
 public class OrderReq {
+    private Long id;
     private String orderNo;
     private Long userId;
     private String userName;

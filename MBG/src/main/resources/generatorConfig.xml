@@ -18,6 +18,6 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.demo.mapper" targetProject="src/main/java"/>
 
 <!--        <table tableName="user" domainObjectName="User" schema="demo"/>-->
-        <table tableName="orders" domainObjectName="Order" schema="demo"/>
+        <table tableName="password_reset_token" domainObjectName="PasswordResetToken" schema="demo"/>
     </context>
 </generatorConfiguration>

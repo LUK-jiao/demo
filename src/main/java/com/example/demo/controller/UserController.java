@@ -38,5 +38,24 @@ public class UserController {
         log.info("Logining user: {}", userReq.getUsername());
         return userService.login(userReq.getUsername(), userReq.getPassword());
     }
+
+    @PostMapping("/forgetPW")
+    public Result forgetPW(@RequestBody UserReq userReq){
+        log.info("forgetPW userReq: {}", userReq);
+        if(userReq.getUsername() == null){
+            return Result.failure("Username must not be null");
+        }
+        if(userService.forgetPW(userReq.getUsername())){
+            log.info("username:{} does not exist", userReq.getUsername());
+        }
+        return Result.successWithMsg("A reset email has been sent, please check your email");
+    }
+
+    @PostMapping("/resetPW")
+    public Result resetPW(@RequestBody UserReq userReq){
+        log.info("resetPW userReq: {}", userReq);
+        //后面就是调service，删除原来的账号，并且将原来
+
+    }
 }
 

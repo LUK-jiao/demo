@@ -12,8 +12,14 @@ public class TokenRedisManager {
     @Autowired
     StringRedisTemplate stringRedisTemplate;
 
-    public void storeToken(String token,Long userId) {
-        stringRedisTemplate.opsForValue().set(token, String.valueOf(userId),30L, TimeUnit.MINUTES);
+    /**
+     *
+     * @param token
+     * @param userId
+     * @param expireTime(minutes)
+     */
+    public void storeToken(String token,Long userId,long expireTime) {
+        stringRedisTemplate.opsForValue().set(token, String.valueOf(userId),expireTime, TimeUnit.MINUTES);
     }
 
     public boolean isTokenValid(String token) {

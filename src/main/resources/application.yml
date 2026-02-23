@@ -10,6 +10,15 @@ spring:
     redis:
       host: localhost
       port: 6379
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      acks: all
+      retries: 3
+    consumer:
+      group-id: mail-group
+      enable-auto-commit: false
+      auto-offset-reset: earliest
 mybatis-plus:
   mapper-locations: classpath*:mapper/*.xml
   configuration:

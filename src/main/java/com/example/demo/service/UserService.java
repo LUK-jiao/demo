@@ -49,7 +49,7 @@ public class UserService {
             return Result.failure("Incorrect password");
         }
         String token = jwtUtils.generateToken(user.getId());
-        tokenRedisManager.storeToken(token, user.getId());
+        tokenRedisManager.storeToken(token, user.getId(),30L);
         UserVo userVo = new UserVo();
         BeanUtils.copyProperties(user, userVo);
         userVo.setToken(token);
@@ -57,10 +57,20 @@ public class UserService {
     }
 
     public User getUserByUsername(String userName){
-        User user = userMapper.selectByUsername(String.valueOf(userName));
+        User user = userMapper.selectByUsername(userName);
         if(user == null){
             return null;
         }
         return user;
+    }
+
+
+    public boolean forgetPW(String username) {
+        User user = getUserByUsername(username);
+        if(user == null){
+            return false;
+        }//首先生成token，存库，通过邮箱发送链接
+        String token = jwtUtils.generateToken(user.getId());
+        tokenRedisManager.storeToken(token, user.getId(),10L);
     }
 }

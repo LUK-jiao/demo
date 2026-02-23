@@ -21,3 +21,5 @@
 2026-02-10 22:55:33.453 INFO  [http-nio-8080-exec-2] [7a34a07b-4584-4512-a85a-5c253029ea61] [2] com.example.demo.controller.OrderController - Creating order for user: OrderReq(id=null, orderNo=null, userId=2, userName=, productId=11, quantity=9, totalAmount=100.00, statusDesc=)
 2026-02-10 22:56:39.486 INFO  [http-nio-8080-exec-5] [7efca787-662c-4ad0-8e10-b9c82f08209b] [2] com.example.demo.handler.AuthInterceptor - Already online user:2
 2026-02-10 22:56:39.530 INFO  [http-nio-8080-exec-5] [7efca787-662c-4ad0-8e10-b9c82f08209b] [2] com.example.demo.controller.OrderController - Deleting Order req:{"orderNo":"17707353334533401"}
+2026-02-10 22:59:11.386 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-10 22:59:11.394 INFO  [SpringApplicationShutdownHook] [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

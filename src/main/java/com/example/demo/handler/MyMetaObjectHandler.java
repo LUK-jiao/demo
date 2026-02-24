@@ -25,8 +25,8 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
                 Date.class, now);
         this.strictInsertFill(metaObject, "updatedAt",
                 Date.class, now);
-        this.strictInsertFill(metaObject, "expiresAt", Date.class, expiresAt);
-        this.strictInsertFill(metaObject, "used", Boolean.class,false);
+        this.strictInsertFill(metaObject, "expiresAt",
+                Date.class, expiresAt);
     }
 
     @Override

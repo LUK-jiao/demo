@@ -1,9 +1,6 @@
 package com.example.demo.model;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.lang.reflect.Field;
@@ -19,10 +16,12 @@ public class PasswordResetToken {
 
     private String tokenHash;
 
+    @TableField(fill = FieldFill.INSERT)
     private Date expiresAt;
 
     @TableField(fill = FieldFill.INSERT)
     private Date createdAt;
 
+    @TableField(insertStrategy = FieldStrategy.NOT_NULL)
     private Boolean used;
 }

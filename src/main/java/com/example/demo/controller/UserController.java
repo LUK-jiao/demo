@@ -1,10 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.enums.ErrorCode;
 import com.example.demo.request.UserReq;
 import com.example.demo.response.Result;
 import com.example.demo.service.UserService;
-import com.example.demo.utils.JwtUtils;
-import com.example.demo.utils.TokenRedisManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,7 +45,7 @@ public class UserController {
             return Result.failure("Username must not be null");
         }
         if(userService.forgetPW(userReq.getUsername())){
-            log.info("username:{} does not exist", userReq.getUsername());
+            return Result.failure(ErrorCode.OTHER.getMessage());
         }
         return Result.successWithMsg("A reset email has been sent, please check your email");
     }

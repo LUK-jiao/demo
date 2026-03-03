@@ -4,9 +4,7 @@ import com.example.demo.enums.ErrorCode;
 import com.example.demo.exceptions.BusinessException;
 import com.example.demo.mapper.PasswordResetTokenMapper;
 import com.example.demo.mapper.UserMapper;
-import com.example.demo.model.PasswordResetToken;
-import com.example.demo.model.User;
-import com.example.demo.model.UserVo;
+import com.example.demo.model.*;
 import com.example.demo.response.Result;
 import com.example.demo.utils.JwtUtils;
 import com.example.demo.utils.KafkaUtils;
@@ -16,6 +14,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
 @Slf4j
@@ -78,23 +77,46 @@ public class UserService {
         return user;
     }
 
-
-    public boolean forgetPW(String username) {
-        User user = getUserByUsername(username);
+    public UserDTO verifyUserEmail(String username){
+        User user = userMapper.selectByUsername(username);
+        UserDTO userDTO = new UserDTO();
         if(user == null){
-            return false;
-        }//首先生成token，存库，通过邮箱发送链接
-        String tokenHash = jwtUtils.generateToken(user.getId());
+            return null;
+        }
+        BeanUtils.copyProperties(user,userDTO);
+        return userDTO;
+    }
+
+    public boolean forgetPW(String emailAddress,Long userId) {
+        //生成token，存库，通过邮箱发送链接
+        String tokenHash = jwtUtils.generateToken(userId);
         PasswordResetToken passwordResetToken = new PasswordResetToken();
-        passwordResetToken.setUserId(user.getId());
+        passwordResetToken.setUserId(userId);
         passwordResetToken.setTokenHash(tokenHash);
         try{
             passwordResetTokenMapper.insert(passwordResetToken);//todo 需要事务
-            kafkaUtils.send(passwordResetToken);
         }catch (Exception e){
             log.info("UserService forgetPW error :{}",e.getMessage());
             return false;
         }
+        //发消息
+        MailMessage  mailMessage = new MailMessage();
+        mailMessage.setEamil_address(emailAddress);
+        mailMessage.setPasswordResetToken(passwordResetToken);
+        kafkaUtils.send(mailMessage);
         return true;
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void resetPassword(User updateUser) {
+        try {
+            int result = userMapper.updateById(updateUser);
+            if (result == 0) {
+                throw new BusinessException("用户不存在或更新失败");
+            }
+        } catch (Exception e) {
+            log.error("UserService resetPassword error :", e);  // 使用 error 级别，打印堆栈
+            throw new BusinessException("密码重置失败: " + e.getMessage());  // 重新抛出
+        }
     }
 }

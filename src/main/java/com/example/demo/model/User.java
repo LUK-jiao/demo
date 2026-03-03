@@ -15,4 +15,8 @@ public class User {
     private String username;
 
     private String password;
+
+    private String email_address;
+
+    private Long token_version;
 }

@@ -1,10 +1,8 @@
 package com.example.demo.handler;
 
-import com.example.demo.model.PasswordResetToken;
-import com.example.demo.utils.MailService;
+import com.example.demo.model.MailMessage;
+import com.example.demo.service.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.kafka.annotation.KafkaHandler;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Component;
@@ -17,7 +15,7 @@ public class PasswordResetHandler {
     private MailService mailService;
 
     @KafkaListener(topics = "${kafka.mail.topic}" ,groupId = "mail-group")
-    public void handle(PasswordResetToken event,
+    public void handle(MailMessage event,
                        Acknowledgment ack) {
         try {
             mailService.sendResetMail(event);

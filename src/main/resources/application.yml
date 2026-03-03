@@ -23,6 +23,21 @@ spring:
       group-id: mail-group
       enable-auto-commit: false
       auto-offset-reset: earliest
+  mail:
+    host: smtp.163.com  # 邮件服务器主机
+    port: 587  # 端口号（TLS通常用587，SSL用465）
+    username: jiao_zeming@163.com  # 邮箱账号
+    password: BWfm6ir99L2exwcf  # 邮箱授权码（不是登录密码）
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
 mybatis-plus:
   mapper-locations: classpath*:mapper/*.xml
   configuration:

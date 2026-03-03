@@ -5,7 +5,9 @@ public enum ErrorCode {
     ORDER_NOT_FOUND("ORDER_404", "订单不存在"),
     ORDER_FORBIDDEN("ORDER_403", "无权操作该订单"),
     ORDER_STATUS_INVALID("ORDER_409", "订单状态不允许修改"),
-    PARAM_INVALID("PARAM_400", "参数不合法"),
+    PARAM_INVALID("PARAM_400", "参数不全或不合法"),
+    TOKEN_IS_NULL("TOKEN_400","token不能为空"),
+    TOKEN_INVALID("TOKEN_401","无效token"),
     OTHER("999","其他错误");
 
     private final String code;

@@ -21,7 +21,8 @@ public class WebConfig implements WebMvcConfigurer {
                         "/user/register",
                         "/health",
                         "/error",
-                        "user/forgetPW"
+                        "user/forgetPW",
+                        "user/resetPW"
                 );
     }
 }

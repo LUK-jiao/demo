@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class MailMessage {
 
-    private String eamil_address;
+    private String emailAddress;
 
     private PasswordResetToken passwordResetToken;
 }

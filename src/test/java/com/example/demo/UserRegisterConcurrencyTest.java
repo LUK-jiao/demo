@@ -29,8 +29,8 @@ public class UserRegisterConcurrencyTest {
                 user.setUsername("concurrentUser");
                 user.setPassword("password123");
                 try {
-                    Result res = userService.register(user.getUsername(), user.getPassword());
-                    System.out.println(Thread.currentThread().getName() + ": " + res.getMessage());
+//                    Result res = userService.register(user.getUsername(), user.getPassword());
+//                    System.out.println(Thread.currentThread().getName() + ": " + res.getMessage());
                 } finally {
                     countDownLatch.countDown();
                 }

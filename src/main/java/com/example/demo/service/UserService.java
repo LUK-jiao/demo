@@ -36,11 +36,12 @@ public class UserService {
     @Autowired
     KafkaUtils kafkaUtils;
 
-    public Result register(String username, String password) {
+    public Result register(UserDTO userDTO) {
         User user = new User();
-        user.setUsername(username);
-        user.setPassword(password);
-        if(userMapper.selectByUsername(username) != null){
+        user.setUsername(userDTO.getUsername());
+        user.setPassword(userDTO.getPassword());
+        user.setEmailAddress(userDTO.getEmailAddress());
+        if(userMapper.selectByUsername(user.getUsername()) != null){
             return Result.failure("Username already exists");
         }
         try{
@@ -84,6 +85,9 @@ public class UserService {
             return null;
         }
         BeanUtils.copyProperties(user,userDTO);
+//        userDTO.setEmailAddress(user.getEmailAddress());
+//        userDTO.setUsername(user.getUsername());
+//        userDTO.setId(user.getId());
         return userDTO;
     }
 
@@ -96,12 +100,12 @@ public class UserService {
         try{
             passwordResetTokenMapper.insert(passwordResetToken);//todo 需要事务
         }catch (Exception e){
-            log.info("UserService forgetPW error :{}",e.getMessage());
+            log.error("UserService forgetPW error :{}",e.getMessage());
             return false;
         }
         //发消息
         MailMessage  mailMessage = new MailMessage();
-        mailMessage.setEamil_address(emailAddress);
+        mailMessage.setEmailAddress(emailAddress);
         mailMessage.setPasswordResetToken(passwordResetToken);
         kafkaUtils.send(mailMessage);
         return true;

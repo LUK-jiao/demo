@@ -16,7 +16,7 @@ public class User {
 
     private String password;
 
-    private String email_address;
+    private String emailAddress;
 
-    private Long token_version;
+    private Long tokenVersion;
 }

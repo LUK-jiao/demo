@@ -15,7 +15,7 @@ public class MailService {
     private MailUtils mailUtils;
 
     public void sendResetMail(MailMessage event) {
-        String to = event.getEamil_address();
+        String to = event.getEmailAddress();
         String subject = "带有token的忘记密码邮件";
         String content = String.format("token : %s", event.getPasswordResetToken().getTokenHash());
         mailUtils.sendSimpleMail(to, subject, content);

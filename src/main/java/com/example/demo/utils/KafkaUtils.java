@@ -17,6 +17,6 @@ public class KafkaUtils {
     private String mailTopic;
 
     public void send(MailMessage mailMessage) {
-        kafkaTemplate.send(mailTopic,mailMessage.getEamil_address(),mailMessage);
+        kafkaTemplate.send(mailTopic,mailMessage.getEmailAddress(),mailMessage);
     }
 }

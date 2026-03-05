@@ -9,7 +9,9 @@ public class UserDTO {
 
     private String username;
 
-    private String email_address;
+    private String emailAddress;
 
-    private String token_version;
+    private String password;
+
+    private int tokenVersion;
 }

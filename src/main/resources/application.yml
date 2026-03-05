@@ -14,26 +14,36 @@ spring:
     bootstrap-servers: localhost:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       acks: all
       retries: 3
     consumer:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       group-id: mail-group
       enable-auto-commit: false
       auto-offset-reset: earliest
+      properties:
+        spring.json.trusted.packages: "com.example.demo.model"
+    listener:
+      retry:
+        enabled: true
+        initial-interval: 1000  # 初始重试间隔1秒
+        max-interval: 60000  # 最大重试间隔60秒
+        max-attempts: 3  # 最大重试次数
+      concurrency: 3  # 并发消费者数
+
   mail:
     host: smtp.163.com  # 邮件服务器主机
-    port: 587  # 端口号（TLS通常用587，SSL用465）
+    port: 465  # 端口号（TLS通常用587，SSL用465）
     username: jiao_zeming@163.com  # 邮箱账号
-    password: BWfm6ir99L2exwcf  # 邮箱授权码（不是登录密码）
+    password: UXhvdNZCkPLpM3gg  # 邮箱授权码（不是登录密码）
     protocol: smtp
     properties:
       mail:
         smtp:
           auth: true
-          starttls:
+          ssl:
             enable: true
           connectiontimeout: 5000
           timeout: 3000

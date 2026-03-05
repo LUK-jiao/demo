@@ -2,11 +2,16 @@ package com.example.demo.handler;
 
 import com.example.demo.model.MailMessage;
 import com.example.demo.service.MailService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
+import static io.lettuce.core.pubsub.PubSubOutput.Type.message;
+
+@Slf4j
 @Component
 public class PasswordResetHandler {
 
@@ -15,13 +20,11 @@ public class PasswordResetHandler {
     private MailService mailService;
 
     @KafkaListener(topics = "${kafka.mail.topic}" ,groupId = "mail-group")
-    public void handle(MailMessage event,
-                       Acknowledgment ack) {
+    public void handle(@Payload MailMessage event) {
         try {
             mailService.sendResetMail(event);
-            ack.acknowledge();
         } catch (Exception e) {
-            throw e; // 自动重试
+            log.error("Failed to send password reset email to: {}", event.getEmailAddress(), e);
         }
 
     }

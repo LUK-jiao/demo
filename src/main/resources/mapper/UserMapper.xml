@@ -9,10 +9,12 @@
         <result column="id" jdbcType="BIGINT" property="id" />
         <result column="username" jdbcType="VARCHAR" property="username" />
         <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="email_address" jdbcType="VARCHAR" property="emailAddress" />
+        <result column="token_version" jdbcType="INTEGER" property="tokenVersion" />
     </resultMap>
 
     <select id="selectByUsername" resultMap="BaseResultMap" parameterType="string">
-        select id, username, password
+        select id, username, password , email_address
         from user
         where username = #{username,jdbcType=VARCHAR}
     </select>

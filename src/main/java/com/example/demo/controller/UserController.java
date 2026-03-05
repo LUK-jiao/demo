@@ -25,10 +25,15 @@ public class UserController {
 
     @PostMapping("/register")
     public Result register(@RequestBody UserReq userReq){
+        log.info("register UserReq:{}",userReq);
         if(userReq.getUsername() == null || userReq.getPassword() == null){
             return Result.failure("Username, password must not be null");
         }
-        Result result = userService.register(userReq.getUsername(), userReq.getPassword());
+        UserDTO insertUser =  new UserDTO();
+        insertUser.setUsername(userReq.getUsername());
+        insertUser.setEmailAddress(userReq.getEmailAddress());
+        insertUser.setPassword(userReq.getPassword());
+        Result result = userService.register(insertUser);
         log.info("Registered user: {}", userReq );
         return result;
     }
@@ -52,10 +57,10 @@ public class UserController {
         if(userDTO == null){
             return Result.failure("User does not exist,please check");
         }
-        if(userDTO.getEmail_address() == null){
+        if(userDTO.getEmailAddress() == null){
             return Result.failure("Email address is null,please 先绑定email");
         }
-        if(userService.forgetPW(userReq.getUsername(),userDTO.getId())){
+        if(!userService.forgetPW(userDTO.getEmailAddress(),userDTO.getId())){
             return Result.failure(ErrorCode.OTHER.getMessage());
         }
         return Result.successWithMsg("A reset email has been sent, please check your email");

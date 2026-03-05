@@ -25,6 +25,7 @@ public class PasswordResetHandler {
             mailService.sendResetMail(event);
         } catch (Exception e) {
             log.error("Failed to send password reset email to: {}", event.getEmailAddress(), e);
+            throw e; //自动重试
         }
 
     }
